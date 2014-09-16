@@ -33,7 +33,7 @@ module DoctorSwagger
         'apis'           => @endpoints.map(&:as_json)
       }
 
-      if @models != {}
+      unless @models.nil? or @models == {}
         json.merge!({
           'models'         => @models
         })
