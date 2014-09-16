@@ -8,6 +8,7 @@ describe DoctorSwagger do
     swagger_version 'some crazy version'
     api_version '3.0'
     base_path       'https://example.com/api'
+    resource_path '/'
 
     swagger_resource '/products' do
       models({

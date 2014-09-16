@@ -37,6 +37,10 @@ module DoctorSwagger
     @base_path = url
   end
 
+  def self.resource_path=(url)
+    @resource_path = url
+  end
+
   module ClassMethods
     def swagger_version(version)
       @swagger_version = version
@@ -48,6 +52,10 @@ module DoctorSwagger
 
     def base_path(url)
       @base_path = url
+    end
+
+    def resource_path(url)
+      @resource_path = url
     end
 
     def swagger_doc
@@ -67,6 +75,7 @@ module DoctorSwagger
                                         :swagger_version => @swagger_version,
                                         :api_version     => @api_version,
                                         :base_path       => @base_path,
+                                        :resource_path   => @resource_path,
                                         &block)
     end
   end
